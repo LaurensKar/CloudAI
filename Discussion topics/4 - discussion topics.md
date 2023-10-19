@@ -70,8 +70,45 @@
     A: P10 (10th Percentile): This quantile represents a conservative, lower-bound forecast. It is used when you want to plan for a scenario where outcomes are worse than expected or when dealing with a risk-averse approach. For example, in financial planning, you might use P10 for revenue forecasts to ensure you have enough resources in case of poor performance.
 
     P50 (50th Percentile): Also known as the median, P50 represents the most likely or central forecast. It is commonly used for the baseline scenario when you want a balanced estimate without an overly optimistic or pessimistic bias. P50 provides a point estimate that is often used for decision-making and budgeting.
-    
+
     P90 (90th Percentile): P90 is an upper-bound forecast that is more optimistic and represents a scenario where outcomes are better than expected. It's useful when you want to assess the best-case scenario and potential opportunities. For instance, in energy demand forecasting, P90 might be used to ensure adequate supply under favorable conditions.
     
 
 ## The powerpoint and exercises
+
+1. Why is a moving average a bad filler for the measurement of meters?
+    A: In data science, a moving average is a statistical calculation used to analyze and smooth a time series dataset, particularly to reduce noise or reveal underlying trends and patterns. It involves calculating the average of a subset of data points within a moving window or interval as it progresses through the dataset.
+
+    A: You don't do it for the measurement of meters because it is very sensitive to outliers.
+
+1. When would a moving average be a good filler?
+    A: If you want to identify long-term trends or slow-moving patterns in your data, a moving average can be helpful in reducing short-term noise and highlighting these trends.
+
+    A: Handling missing data, smoothing time series data...
+
+1. Explain stability (or stationarity) in a time series dataset.
+    A:In the context of a time series dataset, stability or stationarity refers to the property where the statistical properties of the data do not change over time. A stationary time series is one that exhibits consistent and predictable behavior, making it easier to model and analyze.
+
+1. Explain autocorrelation in a time series dataset.
+    A: Autocorrelation in a time series dataset quantifies the degree to which a data point at one time is correlated with data points at previous or subsequent times. It helps identify patterns and dependencies in the data, which is crucial for time series analysis and forecasting.
+
+    A: Sure, let’s consider the example of daily temperature measurements in a city1. If the temperature value recorded each day is influenced by the value from the previous day, this would be an example of autocorrelation1. For instance, if it’s hot today, it’s likely to be hot tomorrow as well, and vice versa1.
+
+1. Explain Arima, ETS, DeepAR+, NPTS and Prophet. (These are actually five different questions.)
+    A: ARIMA (Autoregressive Integrated Moving Average): This is a forecasting algorithm that uses time series data to either better understand the data set or to predict future trends1. It’s a generalization of an autoregressive moving average (ARMA) model1. ARIMA models are applied in some cases where data show evidence of non-stationarity, where an initial differencing step can be applied one or more times to eliminate the non-stationarity.
+
+ 
+
+    ETS (Error, Trend, Seasonality): ETS is a commonly used statistical method for time series forecasting. It accounts for error, trend, and seasonality in the data to create a model that can predict future points.
+
+ 
+
+    DeepAR+: DeepAR+ is a supervised learning algorithm for forecasting scalar (one-dimensional) time series using recurrent neural networks (RNNs). It’s particularly effective when you have many similar time series across a set of cross-sectional units. It outperforms standard ARIMA and ETS methods when your dataset contains hundreds of related time series.
+
+ 
+
+    NPTS (Non-Parametric Time Series): NPTS is a scalable, probabilistic baseline forecaster provided by Amazon Forecast. It predicts the future value distribution of a given time series by sampling from past observations5. The predictions are bounded by the observed values.
+
+ 
+
+    Prophet: Prophet is an open-source software released by Facebook’s Core Data Science team for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects6789. It works best with time series that have strong seasonal effects and several seasons of historical data.
